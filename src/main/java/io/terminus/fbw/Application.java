@@ -21,7 +21,7 @@ public class Application {
     public static class Startup implements CommandLineRunner {
         @Override
         public void run(String... args) throws Exception {
-            Game game = new Game(100);
+            Game game = new Game(1, 100);
             game.play(args);
         }
     }

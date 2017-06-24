@@ -4,13 +4,17 @@ import com.google.common.collect.ImmutableList;
 
 import java.util.List;
 
+import static io.terminus.fbw.impl.Words.BUZZ;
+import static io.terminus.fbw.impl.Words.FIZZ;
+import static io.terminus.fbw.impl.Words.WHIZZ;
+
 /**
  * Created by IntelliJ IDEA.
  * User: AnsonChan
  * Date: 24/06/2017
  */
 public class Talker {
-    private static final List<String> WORDS = ImmutableList.of("Fizz", "Buzz", "Whizz");
+    private static final List<String> WORDS = ImmutableList.of(FIZZ, BUZZ, WHIZZ);
     private final List<Integer> numbers;
 
     public Talker(List<Integer> numbers) {
