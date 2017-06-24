@@ -18,8 +18,6 @@ public class FizzBuzzWhizzer {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private Runner runner;
-    @Autowired
     private Arguments arguments;
 
     public void run(String... args) {
@@ -29,6 +27,9 @@ public class FizzBuzzWhizzer {
 
         logger.info("Get special numbers success: {}", specialNumbers);
 
-        runner.run(specialNumbers);
+        Talker talker = new Talker(specialNumbers);
+        for (int i = 0; i <= 100; i++) {
+
+        }
     }
 }
