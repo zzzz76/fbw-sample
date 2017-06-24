@@ -23,6 +23,7 @@ public class Arguments {
         // 没有任何命令行参数则从标准输入读取
         if (args.length == 0) {
             logger.info("No args input, read from stdin");
+            System.out.print("Input here: ");
             String arg = new Scanner(System.in).nextLine();
             args = new String[]{ arg };
         }
