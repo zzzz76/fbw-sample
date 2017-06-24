@@ -1,7 +1,6 @@
 package io.terminus.fbw;
 
-import io.terminus.fbw.impl.FizzBuzzWhizzer;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.terminus.fbw.impl.Game;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -20,12 +19,10 @@ public class Application {
 
     @Component
     public static class Startup implements CommandLineRunner {
-        @Autowired
-        private FizzBuzzWhizzer fizzBuzzWhizzer;
-
         @Override
         public void run(String... args) throws Exception {
-            fizzBuzzWhizzer.run(args);
+            Game game = new Game(100);
+            game.play(args);
         }
     }
 }

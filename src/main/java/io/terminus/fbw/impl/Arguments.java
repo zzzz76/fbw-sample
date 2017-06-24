@@ -4,7 +4,6 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,11 +16,10 @@ import java.util.stream.Collectors;
  * User: AnsonChan
  * Date: 24/06/2017
  */
-@Component
 public class Arguments {
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private static final Logger logger = LoggerFactory.getLogger(Arguments.class);
 
-    public List<Integer> parse(String... args) {
+    public static List<Integer> parse(String... args) {
         // 没有任何命令行参数则从标准输入读取
         if (args.length == 0) {
             logger.info("No args input, read from stdin");

@@ -3,8 +3,6 @@ package io.terminus.fbw.impl;
 import com.google.common.base.Joiner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -13,23 +11,25 @@ import java.util.List;
  * User: AnsonChan
  * Date: 23/06/2017
  */
-@Component
-public class FizzBuzzWhizzer {
+public class Game {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    private Arguments arguments;
+    private final Integer endAt;
 
-    public void run(String... args) {
+    public Game(Integer endAt) {
+        this.endAt = endAt;
+    }
+
+    public void play(String... args) {
         logger.debug("Get args input: {}", Joiner.on(" - ").join(args));
 
-        List<Integer> specialNumbers = arguments.parse(args);
+        List<Integer> specialNumbers = Arguments.parse(args);
 
         logger.info("Get special numbers success: {}", specialNumbers);
 
         Talker talker = new Talker(specialNumbers);
-        for (int i = 0; i <= 100; i++) {
-
+        for (int i = 1; i <= endAt; i++) {
+            System.out.println(talker.talk(i));
         }
     }
 }

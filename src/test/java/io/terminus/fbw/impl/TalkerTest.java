@@ -32,5 +32,9 @@ public class TalkerTest {
 
         assertThat(talker.talk(13)).isEqualTo(FIZZ);
         assertThat(talker.talk(35)).isEqualTo(FIZZ);
+
+        assertThat(talker.talk(1)).isEqualTo("1");
+        assertThat(talker.talk(2)).isEqualTo("2");
+        assertThat(talker.talk(11)).isEqualTo("11");
     }
 }
